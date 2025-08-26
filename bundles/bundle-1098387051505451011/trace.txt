@@ -1,0 +1,98 @@
+SELECT * FROM buckets WHERE bucket_name = 'box-0c5921f8'
+
+
+
+     0.000ms      0.000ms    === operation:traced statement _unfinished:1 _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron
+     0.000ms      0.000ms    [flow: {count: 1, duration 2ms}]
+     0.000ms      0.000ms    [batch flow coordinator: {count: 1, duration 2ms}]
+     0.000ms      0.000ms    [colbatchscan: {count: 1, duration 2ms, unfinished}]
+     0.000ms      0.000ms    [txn coordinator send: {count: 1, duration 1ms}]
+     0.000ms      0.000ms    [dist sender send: {count: 1, duration 1ms}]
+     0.000ms      0.000ms    [/cockroach.roachpb.Internal/Batch: {count: 1, duration 1ms}]
+     0.000ms      0.000ms    [optimizer: {count: 1, duration 729µs}]
+     0.009ms      0.009ms        === operation:optimizer _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron
+     0.076ms      0.066ms        event:sql/plan_opt.go:431 [n3,client=192.168.3.113:52622,hostssl,user=ron] query cache miss
+     0.095ms      0.020ms        event:sql/opt/optbuilder/builder.go:239 [n3,client=192.168.3.113:52622,hostssl,user=ron] optbuilder start
+     0.146ms      0.051ms        event:sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=ron] descriptorVersionState.incRefCount: 112("pua_demo",010180e1a6507b94834e6eac23f20d22f476fa) ver=1:0,0, refcount=1
+     0.176ms      0.031ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [112]
+     0.201ms      0.024ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [112]
+     0.216ms      0.015ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [112]
+     0.229ms      0.013ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [112]
+     0.241ms      0.012ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [113]
+     0.262ms      0.020ms        event:sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=ron] descriptorVersionState.incRefCount: 113("public",010180e1a6507b94834e6eac23f20d22f476fa) ver=1:0,0, refcount=1
+     0.285ms      0.024ms        event:sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=ron] descriptorVersionState.incRefCount: 114("buckets",010180e1a6507b94834e6eac23f20d22f476fa) ver=9:0,0, refcount=1
+     0.300ms      0.015ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [114]
+     0.327ms      0.027ms        event:sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=ron] looking up descriptors for ids [23]
+     0.348ms      0.021ms        event:sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=ron] descriptorVersionState.incRefCount: 23("role_members",010180e1a6507b94834e6eac23f20d22f476fa) ver=4:0,0, refcount=1
+     0.579ms      0.231ms        event:sql/opt/optbuilder/builder.go:285 [n3,client=192.168.3.113:52622,hostssl,user=ron] optbuilder finish
+     0.597ms      0.018ms        event:sql/opt/xform/optimizer.go:237 [n3,client=192.168.3.113:52622,hostssl,user=ron] optimize start
+     0.676ms      0.080ms        event:sql/opt/xform/optimizer.go:286 [n3,client=192.168.3.113:52622,hostssl,user=ron] optimize finish
+     0.688ms      0.011ms        event:sql/plan_opt.go:431 [n3,client=192.168.3.113:52622,hostssl,user=ron] query cache add
+     0.795ms      0.795ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] planning ends
+     0.818ms      0.023ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] checking distributability
+     0.835ms      0.017ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] will distribute plan: false
+     0.855ms      0.020ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] executing after 0 retries, last retry reason: <nil>
+     0.869ms      0.014ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] execution starts: distributed engine
+     0.890ms      0.021ms    event:sql/distsql_running.go:2083 [n3,client=192.168.3.113:52622,hostssl,user=ron] creating DistSQL plan with isLocal=true
+     0.918ms      0.028ms    event:sql/distsql_running.go:760 [n3,client=192.168.3.113:52622,hostssl,user=ron] noMutations = true
+     0.935ms      0.017ms    event:sql/distsql_running.go:806 [n3,client=192.168.3.113:52622,hostssl,user=ron] containsLocking = false
+     0.949ms      0.014ms    event:sql/distsql_running.go:895 [n3,client=192.168.3.113:52622,hostssl,user=ron] running DistSQL plan
+     0.956ms      0.006ms        === operation:flow _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron
+     0.956ms      0.000ms        [batch flow coordinator: {count: 1, duration 2ms}]
+     0.956ms      0.000ms        [colbatchscan: {count: 1, duration 2ms, unfinished}]
+     0.956ms      0.000ms        [txn coordinator send: {count: 1, duration 1ms}]
+     0.956ms      0.000ms        [dist sender send: {count: 1, duration 1ms}]
+     0.956ms      0.000ms        [/cockroach.roachpb.Internal/Batch: {count: 1, duration 1ms}]
+     0.979ms      0.024ms        event:sql/colflow/vectorized_flow.go:227 [n3,client=192.168.3.113:52622,hostssl,user=ron] setting up vectorized flow
+     1.020ms      0.041ms        event:sql/colflow/vectorized_flow.go:268 [n3,client=192.168.3.113:52622,hostssl,user=ron] vectorized flow setup succeeded
+     1.144ms      0.124ms        event:sql/flowinfra/flow.go:460 [n3,client=192.168.3.113:52622,hostssl,user=ron] starting (0 processors, 0 startables) asynchronously
+     1.161ms      0.017ms        event:sql/colflow/vectorized_flow.go:315 [n3,client=192.168.3.113:52622,hostssl,user=ron] running the batch flow coordinator in the flow's goroutine
+     1.162ms      0.001ms            === operation:batch flow coordinator _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron cockroach.flowid:82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 cockroach.processorid:0
+     1.162ms      0.000ms            [colbatchscan: {count: 1, duration 2ms, unfinished}]
+     1.162ms      0.000ms            [txn coordinator send: {count: 1, duration 1ms}]
+     1.162ms      0.000ms            [dist sender send: {count: 1, duration 1ms}]
+     1.162ms      0.000ms            [/cockroach.roachpb.Internal/Batch: {count: 1, duration 1ms}]
+     1.167ms      0.005ms                === operation:colbatchscan _unfinished:1 _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron cockroach.flowid:82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 cockroach.processorid:0
+     1.167ms      0.000ms                [txn coordinator send: {count: 1, duration 1ms}]
+     1.167ms      0.000ms                [dist sender send: {count: 1, duration 1ms}]
+     1.167ms      0.000ms                [/cockroach.roachpb.Internal/Batch: {count: 1, duration 1ms}]
+     1.211ms      0.044ms                event:sql/row/kv_batch_fetcher.go:598 [n3,client=192.168.3.113:52622,hostssl,user=ron] Scan /Table/114/1/"box-0c5921f8"/0
+     1.226ms      0.015ms                event:sql/row/kv_batch_fetcher.go:284 [n3,client=192.168.3.113:52622,hostssl,user=ron] kv fetcher: sending a batch with 1 requests
+     1.230ms      0.004ms                    === operation:txn coordinator send _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron txnID:8aad20cf-58e5-48d0-8587-a197e0684592
+     1.230ms      0.000ms                    [dist sender send: {count: 1, duration 1ms}]
+     1.230ms      0.000ms                    [/cockroach.roachpb.Internal/Batch: {count: 1, duration 1ms}]
+     1.244ms      0.014ms                        === operation:dist sender send _verbose:1 node:3 client:192.168.3.113:52622 hostssl: user:ron txn:8aad20cf
+     1.244ms      0.000ms                        [/cockroach.roachpb.Internal/Batch: {count: 1, duration 1ms}]
+     1.279ms      0.035ms                        event:kv/kvclient/kvcoord/range_iter.go:183 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] querying next range at /Table/114/1/"box-0c5921f8"/0
+     1.352ms      0.073ms                        event:kv/kvclient/kvcoord/range_iter.go:220 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] key: /Table/114/1/"box-0c5921f8"/0, desc: r76:/Table/114{-/1/"g"} [(n1,s1):1, (n3,s3):2, (n2,s2):3, next=4, gen=12]
+     1.405ms      0.053ms                        event:kv/kvclient/kvcoord/dist_sender.go:2602 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] routing to nearest replica; leaseholder not required order=[(n3,s3):2(health=false match=2 latency=0µs),(n1,s1):1(health=false match=1 latency=814µs),(n2,s2):3(health=false match=1 latency=1ms)]
+     1.443ms      0.038ms                        event:kv/kvclient/kvcoord/dist_sender.go:2661 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] r76: sending batch 1 Get to (n3,s3):2
+     1.466ms      0.023ms                        event:rpc/nodedialer/nodedialer.go:141 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] sending request to local client
+     1.486ms      0.020ms                        event:kv/kvclient/kvcoord/transport.go:208 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] sending batch request
+     1.499ms      0.012ms                            === operation:/cockroach.roachpb.Internal/Batch _verbose:1 node:3 span.kind:server request:Get [/Table/114/1/"box-0c5921f8"/0], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]
+     1.512ms      0.013ms                            event:server/node.go:1612 [n3] node received request: 1 Get
+     1.573ms      0.061ms                            event:kv/kvserver/store_send.go:149 [n3,s3] executing Get [/Table/114/1/"box-0c5921f8"/0], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]
+     1.595ms      0.023ms                            event:kv/kvserver/replica_send.go:171 [n3,s3,r76/2:/Table/114{-/1/"g"}] read-only path
+     1.618ms      0.022ms                            event:kv/kvserver/concurrency/concurrency_manager.go:259 [n3,s3,r76/2:/Table/114{-/1/"g"}] sequencing request
+     1.635ms      0.017ms                            event:kv/kvserver/concurrency/concurrency_manager.go:340 [n3,s3,r76/2:/Table/114{-/1/"g"}] acquiring latches
+     1.652ms      0.017ms                            event:kv/kvserver/concurrency/concurrency_manager.go:384 [n3,s3,r76/2:/Table/114{-/1/"g"}] scanning lock table for conflicting locks
+     1.682ms      0.031ms                            event:kv/kvserver/replica_follower_read.go:134 [n3,s3,r76/2:/Table/114{-/1/"g"}] serving via follower read; query timestamp below closed timestamp by 36.370589ms
+     1.704ms      0.021ms                            event:
+     1.747ms      0.043ms                            event:kv/kvserver/replica_read.go:308 [n3,s3,r76/2:/Table/114{-/1/"g"}] can drop latches early for batch (Get [/Table/114/1/"box-0c5921f8"/0], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]); scanning lock table first to detect conflicts
+     2.003ms      0.256ms                            event:storage/engine.go:2095 [n3,s3,r76/2:/Table/114{-/1/"g"}] lock table scan stats: seeked 1 times (1 internal); stepped 0 times (0 internal); blocks: 0B cached, 56KB not cached (read time: 30.121µs); points: 0 (0B keys, 0B values)
+     2.026ms      0.023ms                            event:kv/kvserver/replica_read.go:120 [n3,s3,r76/2:/Table/114{-/1/"g"}] lock table scan complete without conflicts; dropping latches early
+     2.043ms      0.016ms                            event:kv/kvserver/replica_read.go:421 [n3,s3,r76/2:/Table/114{-/1/"g"}] executing read-only batch
+     2.410ms      0.367ms                            event:kv/kvserver/replica_evaluate.go:563 [n3,s3,r76/2:/Table/114{-/1/"g"}] evaluated Get command header:<kvnemesis_seq:<> key:"\366r\211\022box-0c5921f8\000\001\210" > , txn="sql txn" meta={id=8aad20cf key=/Min iso=Serializable pri=0.00022221 epo=0 ts=1755271522.241097000,0 min=1755271522.241097000,0 seq=0} lock=false stat=PENDING rts=1755271522.241097000,0 wto=false gul=1755271522.241097000,0 obs={n3@1755271526.440001395,0} : resp=header:<num_keys:1 num_bytes:155 > value:<raw_bytes:")\346Oh\n&\021hwallace@king.com\026\reu-central-1a\033\037\017h@\000\000\001\220\000\000\005\320\000\000\\rules\200\000\000\001\320\000\000O@\000\000\003\220\000\000\006\020\000\000\023\020\000\000\00..., err=<nil>
+     2.450ms      0.040ms                            event:n3 scan stats: stepped 0 times (0 internal); seeked 1 times (1 internal); block-bytes: (total 23 KiB, cached 0 B, duration 11.232µs); points: (count 1, key-bytes 29 B, value-bytes 164 B, tombstoned: 0) ranges: (count 0), (contained-points 0, skipped-points 0) evaluated requests: 1 gets, 0 scans, 0 reverse scans
+     2.478ms      0.028ms                            event:kv/kvserver/replica_read.go:233 [n3,s3,r76/2:/Table/114{-/1/"g"}] read completed
+     2.518ms      0.040ms                            event:server/node.go:1706 [n3] node sending response
+     1.687ms     -0.831ms                            structured:{"@type":"type.googleapis.com/cockroach.roachpb.UsedFollowerRead"}
+     2.421ms      0.734ms                            structured:{"@type":"type.googleapis.com/cockroach.roachpb.ScanStats","numInterfaceSeeks":"1","numInternalSeeks":"1","blockBytes":"23305","keyBytes":"29","valueBytes":"164","pointCount":"1","blockReadDuration":"0.000011232s","numGets":"1","nodeId":3,"region":"us-east-2"}
+     2.581ms      1.095ms                        event:kv/kvclient/kvcoord/transport.go:210 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] received batch response
+     2.633ms      1.403ms                    event:kv/kvclient/kvcoord/txn_interceptor_span_refresher.go:656 [n3,client=192.168.3.113:52622,hostssl,user=ron,txn=8aad20cf] recording span to refresh: /Table/114/1/"box-0c5921f8"/0
+     2.752ms      1.590ms            event:ComponentStats{ID: {82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 PROCESSOR 0 3 }, used follower read, KV nodes: n3, KV regions: us-east-2, KV time: 2ms, KV rows decoded: 1, KV bytes read: 174 B, KV gRPC calls: 1, KV pairs read: 1, MVCC step count (ext/int): 0/0, MVCC seek count (ext/int): 1/1, max memory allocated: 20 KiB, sql cpu time: 31µs, batches output: 1, rows output: 1}
+     2.703ms     -0.048ms            structured:{"@type":"type.googleapis.com/cockroach.sql.distsqlrun.ComponentStats","component":{"flowId":"82c42d17-bf24-4e98-a3ea-ddc2342d6ca7","type":"PROCESSOR","sqlInstanceId":3},"netRx":{"latency":{},"waitTime":{},"deserializationTime":{},"tuplesReceived":{},"bytesReceived":{},"messagesReceived":{}},"netTx":{"tuplesSent":{},"bytesSent":{},"messagesSent":{}},"kv":{"bytesRead":{"valuePlusOne":"175"},"kvPairsRead":{"valuePlusOne":"2"},"tuplesRead":{"valuePlusOne":"2"},"batchRequestsIssued":{"valuePlusOne":"2"},"kvTime":{"valuePlusOne":"0.001502315s"},"contentionTime":{"valuePlusOne":"0.000000001s"},"lockWaitTime":{"valuePlusOne":"0.000000001s"},"latchWaitTime":{"valuePlusOne":"0.000000001s"},"numInterfaceSteps":{"valuePlusOne":"1"},"numInternalSteps":{"valuePlusOne":"1"},"numInterfaceSeeks":{"valuePlusOne":"2"},"numInternalSeeks":{"valuePlusOne":"2"},"blockBytes":{"valuePlusOne":"23306"},"blockBytesInCache":{"valuePlusOne":"1"},"keyBytes":{"valuePlusOne":"30"},"valueBytes":{"valuePlusOne":"165"},"pointCount":{"valuePlusOne":"2"},"pointsCoveredByRangeTombstones":{"valuePlusOne":"1"},"rangeKeyCount":{"valuePlusOne":"1"},"rangeKeyContainedPoints":{"valuePlusOne":"1"},"rangeKeySkippedPoints":{"valuePlusOne":"1"},"kvCpuTime":{},"numGets":{"valuePlusOne":"2"},"numScans":{"valuePlusOne":"1"},"numReverseScans":{"valuePlusOne":"1"},"nodeIds":[3],"regions":["us-east-2"],"usedFollowerRead":true},"exec":{"execTime":{},"maxAllocatedMem":{"valuePlusOne":"20481"},"maxAllocatedDisk":{},"consumedRu":{"valuePlusOne":"1"},"cpuTime":{"valuePlusOne":"0.000031033s"}},"output":{"numBatches":{"valuePlusOne":"2"},"numTuples":{"valuePlusOne":"2"}},"flowStats":{"maxMemUsage":{},"maxDiskUsage":{},"consumedRu":{}}}
+     2.790ms      1.629ms        event:ComponentStats{ID: {82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 FLOW 0 3 us-east-2}}
+     2.780ms     -0.010ms        structured:{"@type":"type.googleapis.com/cockroach.sql.distsqlrun.ComponentStats","component":{"flowId":"82c42d17-bf24-4e98-a3ea-ddc2342d6ca7","type":"FLOW","sqlInstanceId":3,"region":"us-east-2"},"netRx":{"latency":{},"waitTime":{},"deserializationTime":{},"tuplesReceived":{},"bytesReceived":{},"messagesReceived":{}},"netTx":{"tuplesSent":{},"bytesSent":{},"messagesSent":{}},"kv":{"bytesRead":{},"kvPairsRead":{},"tuplesRead":{},"batchRequestsIssued":{},"kvTime":{},"contentionTime":{},"lockWaitTime":{},"latchWaitTime":{},"numInterfaceSteps":{},"numInternalSteps":{},"numInterfaceSeeks":{},"numInternalSeeks":{},"blockBytes":{},"blockBytesInCache":{},"keyBytes":{},"valueBytes":{},"pointCount":{},"pointsCoveredByRangeTombstones":{},"rangeKeyCount":{},"rangeKeyContainedPoints":{},"rangeKeySkippedPoints":{},"kvCpuTime":{},"numGets":{},"numScans":{},"numReverseScans":{}},"exec":{"execTime":{},"maxAllocatedMem":{},"maxAllocatedDisk":{},"consumedRu":{},"cpuTime":{}},"output":{"numBatches":{},"numTuples":{}},"flowStats":{"maxMemUsage":{"valuePlusOne":"20481"},"maxDiskUsage":{"valuePlusOne":"1"},"consumedRu":{}}}
+     2.835ms      1.886ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] execution ends
+     2.849ms      0.014ms    event:sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=ron] rows affected: 1

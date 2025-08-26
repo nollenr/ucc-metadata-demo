@@ -1,0 +1,33 @@
+planning time: 752µs
+execution time: 2ms
+distribution: local
+vectorized: true
+plan type: custom
+rows decoded from KV: 1 (174 B, 1 gRPC calls)
+cumulative time spent in KV: 2ms
+maximum memory usage: 20 KiB
+DistSQL network usage: 0 B (0 messages)
+regions: us-east-2
+used follower read
+sql cpu time: 31µs
+client time: 19µs
+isolation level: serializable
+priority: normal
+quality of service: regular
+historical: AS OF SYSTEM TIME 2025-08-15 15:25:22.241097
+
+• scan
+  sql nodes: n3
+  kv nodes: n3
+  regions: us-east-2
+  used follower read
+  actual row count: 1
+  KV time: 2ms
+  KV rows decoded: 1
+  KV bytes read: 174 B
+  KV gRPC calls: 1
+  estimated max memory allocated: 20 KiB
+  sql cpu time: 31µs
+  estimated row count: 1 (0.01% of the table; stats collected 16 hours ago)
+  table: buckets@buckets_pkey
+  spans: [/'box-0c5921f8' - /'box-0c5921f8']

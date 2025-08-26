@@ -1,0 +1,10 @@
+scan buckets
+ ├── columns: bucket_name:1!null owner_principal:2!null availability_zone:3!null versioning_enabled:4!null lifecycle_policy:5 audit_logging_enabled:6!null created_at:7!null
+ ├── constraint: /1: [/'reveal-dd973d1a' - /'reveal-dd973d1a']
+ ├── cardinality: [0 - 1]
+ ├── stats: [rows=1]
+ ├── cost: 10.27
+ ├── key: ()
+ ├── fd: ()-->(1-7)
+ ├── distribution: us-east-2
+ └── prune: (2-7)

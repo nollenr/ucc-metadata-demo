@@ -1,0 +1,993 @@
+{
+	"operation": "traced statement",
+	"tagGroups": [
+		{
+			"tags": [
+				{
+					"key": "_unfinished",
+					"value": "1"
+				},
+				{
+					"key": "_verbose",
+					"value": "1"
+				},
+				{
+					"key": "node",
+					"value": "3"
+				},
+				{
+					"key": "client",
+					"value": "192.168.3.113:52622"
+				},
+				{
+					"key": "hostssl"
+				},
+				{
+					"key": "user",
+					"value": "ron"
+				}
+			]
+		}
+	],
+	"startTime": "2025-08-15T15:25:26.442589819Z",
+	"duration": "0.002906084s",
+	"logs": [
+		{
+			"time": "2025-08-15T15:25:26.443384672Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] planning ends"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443407613Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] checking distributability"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443424746Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] will distribute plan: false"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443444955Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] executing after 0 retries, last retry reason: \u003cnil\u003e"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443459248Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] execution starts: distributed engine"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443479827Z",
+			"message": "sql/distsql_running.go:2083 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] creating DistSQL plan with isLocal=true"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443507593Z",
+			"message": "sql/distsql_running.go:760 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] noMutations = true"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443524996Z",
+			"message": "sql/distsql_running.go:806 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] containsLocking = false"
+		},
+		{
+			"time": "2025-08-15T15:25:26.443539191Z",
+			"message": "sql/distsql_running.go:895 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹running DistSQL plan›"
+		},
+		{
+			"time": "2025-08-15T15:25:26.445424986Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] execution ends"
+		},
+		{
+			"time": "2025-08-15T15:25:26.445439304Z",
+			"message": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] rows affected: 1"
+		}
+	],
+	"childrenMetadata": {
+		"/cockroach.roachpb.Internal/Batch": {
+			"duration": "0.001020313s",
+			"count": "1"
+		},
+		"batch flow coordinator": {
+			"duration": "0.001596566s",
+			"count": "1"
+		},
+		"colbatchscan": {
+			"duration": "0.001595745s",
+			"count": "1",
+			"containsUnfinished": true
+		},
+		"dist sender send": {
+			"duration": "0.001340763s",
+			"count": "1"
+		},
+		"flow": {
+			"duration": "0.001837911s",
+			"count": "1"
+		},
+		"optimizer": {
+			"duration": "0.000728548s",
+			"count": "1"
+		},
+		"txn coordinator send": {
+			"duration": "0.001407578s",
+			"count": "1"
+		}
+	},
+	"children": [
+		{
+			"operation": "optimizer",
+			"tagGroups": [
+				{
+					"tags": [
+						{
+							"key": "_verbose",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl"
+						},
+						{
+							"key": "user",
+							"value": "ron"
+						}
+					]
+				}
+			],
+			"startTime": "2025-08-15T15:25:26.442599091Z",
+			"duration": "0.000728548s",
+			"logs": [
+				{
+					"time": "2025-08-15T15:25:26.442665519Z",
+					"message": "sql/plan_opt.go:431 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹query cache miss›"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442685178Z",
+					"message": "sql/opt/optbuilder/builder.go:239 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optbuilder start"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442735738Z",
+					"message": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 112(‹\"pua_demo\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=1:0,0, refcount=1"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442766245Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442790581Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442805539Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442818766Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442831114Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [113]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442851496Z",
+					"message": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 113(‹\"public\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=1:0,0, refcount=1"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442874995Z",
+					"message": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 114(‹\"buckets\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=9:0,0, refcount=1"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442889650Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [114]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442916956Z",
+					"message": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [23]"
+				},
+				{
+					"time": "2025-08-15T15:25:26.442937953Z",
+					"message": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 23(‹\"role_members\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=4:0,0, refcount=1"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443168993Z",
+					"message": "sql/opt/optbuilder/builder.go:285 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optbuilder finish"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443186510Z",
+					"message": "sql/opt/xform/optimizer.go:237 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optimize start"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443266272Z",
+					"message": "sql/opt/xform/optimizer.go:286 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optimize finish"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443277472Z",
+					"message": "sql/plan_opt.go:431 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹query cache add›"
+				}
+			],
+			"structuredRecords": [
+			]
+		},
+		{
+			"operation": "flow",
+			"tagGroups": [
+				{
+					"tags": [
+						{
+							"key": "_verbose",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl"
+						},
+						{
+							"key": "user",
+							"value": "ron"
+						}
+					]
+				}
+			],
+			"startTime": "2025-08-15T15:25:26.443545476Z",
+			"duration": "0.001837911s",
+			"logs": [
+				{
+					"time": "2025-08-15T15:25:26.443569197Z",
+					"message": "sql/colflow/vectorized_flow.go:227 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹setting up vectorized flow›"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443609984Z",
+					"message": "sql/colflow/vectorized_flow.go:268 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] vectorized flow setup succeeded"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443733627Z",
+					"message": "sql/flowinfra/flow.go:460 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] starting (0 processors, 0 startables) asynchronously"
+				},
+				{
+					"time": "2025-08-15T15:25:26.443750841Z",
+					"message": "sql/colflow/vectorized_flow.go:315 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹running the batch flow coordinator in the flow's goroutine›"
+				},
+				{
+					"time": "2025-08-15T15:25:26.445379875Z",
+					"message": "ComponentStats{ID: {82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 FLOW 0 3 ‹us-east-2›}}"
+				}
+			],
+			"structuredRecords": [
+				{
+					"time": "2025-08-15T15:25:26.445370119Z",
+					"payload": {
+						"@type": "type.googleapis.com/cockroach.sql.distsqlrun.ComponentStats",
+						"component": {
+							"flowId": "82c42d17-bf24-4e98-a3ea-ddc2342d6ca7",
+							"type": "FLOW",
+							"sqlInstanceId": 3,
+							"region": "us-east-2"
+						},
+						"netRx": {
+							"latency": {
+
+							},
+							"waitTime": {
+
+							},
+							"deserializationTime": {
+
+							},
+							"tuplesReceived": {
+
+							},
+							"bytesReceived": {
+
+							},
+							"messagesReceived": {
+
+							}
+						},
+						"netTx": {
+							"tuplesSent": {
+
+							},
+							"bytesSent": {
+
+							},
+							"messagesSent": {
+
+							}
+						},
+						"kv": {
+							"bytesRead": {
+
+							},
+							"kvPairsRead": {
+
+							},
+							"tuplesRead": {
+
+							},
+							"batchRequestsIssued": {
+
+							},
+							"kvTime": {
+
+							},
+							"contentionTime": {
+
+							},
+							"lockWaitTime": {
+
+							},
+							"latchWaitTime": {
+
+							},
+							"numInterfaceSteps": {
+
+							},
+							"numInternalSteps": {
+
+							},
+							"numInterfaceSeeks": {
+
+							},
+							"numInternalSeeks": {
+
+							},
+							"blockBytes": {
+
+							},
+							"blockBytesInCache": {
+
+							},
+							"keyBytes": {
+
+							},
+							"valueBytes": {
+
+							},
+							"pointCount": {
+
+							},
+							"pointsCoveredByRangeTombstones": {
+
+							},
+							"rangeKeyCount": {
+
+							},
+							"rangeKeyContainedPoints": {
+
+							},
+							"rangeKeySkippedPoints": {
+
+							},
+							"kvCpuTime": {
+
+							},
+							"numGets": {
+
+							},
+							"numScans": {
+
+							},
+							"numReverseScans": {
+
+							}
+						},
+						"exec": {
+							"execTime": {
+
+							},
+							"maxAllocatedMem": {
+
+							},
+							"maxAllocatedDisk": {
+
+							},
+							"consumedRu": {
+
+							},
+							"cpuTime": {
+
+							}
+						},
+						"output": {
+							"numBatches": {
+
+							},
+							"numTuples": {
+
+							}
+						},
+						"flowStats": {
+							"maxMemUsage": {
+								"valuePlusOne": "20481"
+							},
+							"maxDiskUsage": {
+								"valuePlusOne": "1"
+							},
+							"consumedRu": {
+
+							}
+						}
+					}
+				}
+			],
+			"childrenMetadata": {
+				"/cockroach.roachpb.Internal/Batch": {
+					"duration": "0.001020313s",
+					"count": "1"
+				},
+				"batch flow coordinator": {
+					"duration": "0.001596566s",
+					"count": "1"
+				},
+				"colbatchscan": {
+					"duration": "0.001595745s",
+					"count": "1",
+					"containsUnfinished": true
+				},
+				"dist sender send": {
+					"duration": "0.001340763s",
+					"count": "1"
+				},
+				"txn coordinator send": {
+					"duration": "0.001407578s",
+					"count": "1"
+				}
+			},
+			"children": [
+				{
+					"operation": "batch flow coordinator",
+					"tagGroups": [
+						{
+							"tags": [
+								{
+									"key": "_verbose",
+									"value": "1"
+								},
+								{
+									"key": "node",
+									"value": "3"
+								},
+								{
+									"key": "client",
+									"value": "192.168.3.113:52622"
+								},
+								{
+									"key": "hostssl"
+								},
+								{
+									"key": "user",
+									"value": "ron"
+								},
+								{
+									"key": "cockroach.flowid",
+									"value": "82c42d17-bf24-4e98-a3ea-ddc2342d6ca7"
+								},
+								{
+									"key": "cockroach.processorid",
+									"value": "0"
+								}
+							]
+						}
+					],
+					"startTime": "2025-08-15T15:25:26.443751629Z",
+					"duration": "0.001596566s",
+					"logs": [
+						{
+							"time": "2025-08-15T15:25:26.445341721Z",
+							"message": "ComponentStats{ID: {82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 PROCESSOR 0 3 }, used follower read, KV nodes: n3, KV regions: ‹us-east-2›, KV time: 2ms, KV rows decoded: 1, KV bytes read: ‹174 B›, KV gRPC calls: 1, KV pairs read: 1, MVCC step count (ext/int): ‹0/0›, MVCC seek count (ext/int): ‹1/1›, max memory allocated: ‹20 KiB›, sql cpu time: 31µs, batches output: 1, rows output: 1}"
+						}
+					],
+					"structuredRecords": [
+						{
+							"time": "2025-08-15T15:25:26.445293270Z",
+							"payload": {
+								"@type": "type.googleapis.com/cockroach.sql.distsqlrun.ComponentStats",
+								"component": {
+									"flowId": "82c42d17-bf24-4e98-a3ea-ddc2342d6ca7",
+									"type": "PROCESSOR",
+									"sqlInstanceId": 3
+								},
+								"netRx": {
+									"latency": {
+
+									},
+									"waitTime": {
+
+									},
+									"deserializationTime": {
+
+									},
+									"tuplesReceived": {
+
+									},
+									"bytesReceived": {
+
+									},
+									"messagesReceived": {
+
+									}
+								},
+								"netTx": {
+									"tuplesSent": {
+
+									},
+									"bytesSent": {
+
+									},
+									"messagesSent": {
+
+									}
+								},
+								"kv": {
+									"bytesRead": {
+										"valuePlusOne": "175"
+									},
+									"kvPairsRead": {
+										"valuePlusOne": "2"
+									},
+									"tuplesRead": {
+										"valuePlusOne": "2"
+									},
+									"batchRequestsIssued": {
+										"valuePlusOne": "2"
+									},
+									"kvTime": {
+										"valuePlusOne": "0.001502315s"
+									},
+									"contentionTime": {
+										"valuePlusOne": "0.000000001s"
+									},
+									"lockWaitTime": {
+										"valuePlusOne": "0.000000001s"
+									},
+									"latchWaitTime": {
+										"valuePlusOne": "0.000000001s"
+									},
+									"numInterfaceSteps": {
+										"valuePlusOne": "1"
+									},
+									"numInternalSteps": {
+										"valuePlusOne": "1"
+									},
+									"numInterfaceSeeks": {
+										"valuePlusOne": "2"
+									},
+									"numInternalSeeks": {
+										"valuePlusOne": "2"
+									},
+									"blockBytes": {
+										"valuePlusOne": "23306"
+									},
+									"blockBytesInCache": {
+										"valuePlusOne": "1"
+									},
+									"keyBytes": {
+										"valuePlusOne": "30"
+									},
+									"valueBytes": {
+										"valuePlusOne": "165"
+									},
+									"pointCount": {
+										"valuePlusOne": "2"
+									},
+									"pointsCoveredByRangeTombstones": {
+										"valuePlusOne": "1"
+									},
+									"rangeKeyCount": {
+										"valuePlusOne": "1"
+									},
+									"rangeKeyContainedPoints": {
+										"valuePlusOne": "1"
+									},
+									"rangeKeySkippedPoints": {
+										"valuePlusOne": "1"
+									},
+									"kvCpuTime": {
+
+									},
+									"numGets": {
+										"valuePlusOne": "2"
+									},
+									"numScans": {
+										"valuePlusOne": "1"
+									},
+									"numReverseScans": {
+										"valuePlusOne": "1"
+									},
+									"nodeIds": [
+										3
+									],
+									"regions": [
+										"us-east-2"
+									],
+									"usedFollowerRead": true
+								},
+								"exec": {
+									"execTime": {
+
+									},
+									"maxAllocatedMem": {
+										"valuePlusOne": "20481"
+									},
+									"maxAllocatedDisk": {
+
+									},
+									"consumedRu": {
+										"valuePlusOne": "1"
+									},
+									"cpuTime": {
+										"valuePlusOne": "0.000031033s"
+									}
+								},
+								"output": {
+									"numBatches": {
+										"valuePlusOne": "2"
+									},
+									"numTuples": {
+										"valuePlusOne": "2"
+									}
+								},
+								"flowStats": {
+									"maxMemUsage": {
+
+									},
+									"maxDiskUsage": {
+
+									},
+									"consumedRu": {
+
+									}
+								}
+							}
+						}
+					],
+					"childrenMetadata": {
+						"/cockroach.roachpb.Internal/Batch": {
+							"duration": "0.001020313s",
+							"count": "1"
+						},
+						"colbatchscan": {
+							"duration": "0.001595745s",
+							"count": "1",
+							"containsUnfinished": true
+						},
+						"dist sender send": {
+							"duration": "0.001340763s",
+							"count": "1"
+						},
+						"txn coordinator send": {
+							"duration": "0.001407578s",
+							"count": "1"
+						}
+					},
+					"children": [
+						{
+							"operation": "colbatchscan",
+							"tagGroups": [
+								{
+									"tags": [
+										{
+											"key": "_unfinished",
+											"value": "1"
+										},
+										{
+											"key": "_verbose",
+											"value": "1"
+										},
+										{
+											"key": "node",
+											"value": "3"
+										},
+										{
+											"key": "client",
+											"value": "192.168.3.113:52622"
+										},
+										{
+											"key": "hostssl"
+										},
+										{
+											"key": "user",
+											"value": "ron"
+										},
+										{
+											"key": "cockroach.flowid",
+											"value": "82c42d17-bf24-4e98-a3ea-ddc2342d6ca7"
+										},
+										{
+											"key": "cockroach.processorid",
+											"value": "0"
+										}
+									]
+								}
+							],
+							"startTime": "2025-08-15T15:25:26.443756798Z",
+							"duration": "0.001596861s",
+							"logs": [
+								{
+									"time": "2025-08-15T15:25:26.443801040Z",
+									"message": "sql/row/kv_batch_fetcher.go:598 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] Scan ‹/Table/114/1/\"box-0c5921f8\"/0›"
+								},
+								{
+									"time": "2025-08-15T15:25:26.443815588Z",
+									"message": "sql/row/kv_batch_fetcher.go:284 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] kv fetcher: sending a batch with 1 requests"
+								}
+							],
+							"structuredRecords": [
+							],
+							"childrenMetadata": {
+								"/cockroach.roachpb.Internal/Batch": {
+									"duration": "0.001020313s",
+									"count": "1"
+								},
+								"dist sender send": {
+									"duration": "0.001340763s",
+									"count": "1"
+								},
+								"txn coordinator send": {
+									"duration": "0.001407578s",
+									"count": "1"
+								}
+							},
+							"children": [
+								{
+									"operation": "txn coordinator send",
+									"tagGroups": [
+										{
+											"tags": [
+												{
+													"key": "_verbose",
+													"value": "1"
+												},
+												{
+													"key": "node",
+													"value": "3"
+												},
+												{
+													"key": "client",
+													"value": "192.168.3.113:52622"
+												},
+												{
+													"key": "hostssl"
+												},
+												{
+													"key": "user",
+													"value": "ron"
+												},
+												{
+													"key": "txnID",
+													"value": "8aad20cf-58e5-48d0-8587-a197e0684592"
+												}
+											]
+										}
+									],
+									"startTime": "2025-08-15T15:25:26.443819920Z",
+									"duration": "0.001407578s",
+									"logs": [
+										{
+											"time": "2025-08-15T15:25:26.445222829Z",
+											"message": "kv/kvclient/kvcoord/txn_interceptor_span_refresher.go:656 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] recording span to refresh: ‹/Table/114/1/\"box-0c5921f8\"/0›"
+										}
+									],
+									"structuredRecords": [
+									],
+									"childrenMetadata": {
+										"/cockroach.roachpb.Internal/Batch": {
+											"duration": "0.001020313s",
+											"count": "1"
+										},
+										"dist sender send": {
+											"duration": "0.001340763s",
+											"count": "1"
+										}
+									},
+									"children": [
+										{
+											"operation": "dist sender send",
+											"tagGroups": [
+												{
+													"tags": [
+														{
+															"key": "_verbose",
+															"value": "1"
+														},
+														{
+															"key": "node",
+															"value": "3"
+														},
+														{
+															"key": "client",
+															"value": "192.168.3.113:52622"
+														},
+														{
+															"key": "hostssl"
+														},
+														{
+															"key": "user",
+															"value": "ron"
+														},
+														{
+															"key": "txn",
+															"value": "8aad20cf"
+														}
+													]
+												}
+											],
+											"startTime": "2025-08-15T15:25:26.443834279Z",
+											"duration": "0.001340763s",
+											"logs": [
+												{
+													"time": "2025-08-15T15:25:26.443869216Z",
+													"message": "kv/kvclient/kvcoord/range_iter.go:183 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] querying next range at /Table/114/1/‹\"box-0c5921f8\"›/‹0›"
+												},
+												{
+													"time": "2025-08-15T15:25:26.443941873Z",
+													"message": "kv/kvclient/kvcoord/range_iter.go:220 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] key: /Table/114/1/‹\"box-0c5921f8\"›/‹0›, desc: r76:‹/Table/114{-/1/\"g\"}› [(n1,s1):1, (n3,s3):2, (n2,s2):3, next=4, gen=12]"
+												},
+												{
+													"time": "2025-08-15T15:25:26.443995197Z",
+													"message": "kv/kvclient/kvcoord/dist_sender.go:2602 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] routing to nearest replica; leaseholder not required order=‹[›(n3,s3):2(health=false match=2 latency=0µs)‹,›(n1,s1):1(health=false match=1 latency=814µs)‹,›(n2,s2):3(health=false match=1 latency=1ms)‹]›"
+												},
+												{
+													"time": "2025-08-15T15:25:26.444032769Z",
+													"message": "kv/kvclient/kvcoord/dist_sender.go:2661 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] r76: sending batch ‹1 Get› to (n3,s3):2"
+												},
+												{
+													"time": "2025-08-15T15:25:26.444055956Z",
+													"message": "rpc/nodedialer/nodedialer.go:141 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] ‹sending request to local client›"
+												},
+												{
+													"time": "2025-08-15T15:25:26.444076313Z",
+													"message": "kv/kvclient/kvcoord/transport.go:208 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] ‹sending batch request›"
+												},
+												{
+													"time": "2025-08-15T15:25:26.445171227Z",
+													"message": "kv/kvclient/kvcoord/transport.go:210 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] ‹received batch response›"
+												}
+											],
+											"structuredRecords": [
+											],
+											"childrenMetadata": {
+												"/cockroach.roachpb.Internal/Batch": {
+													"duration": "0.001020313s",
+													"count": "1"
+												}
+											},
+											"children": [
+												{
+													"operation": "/cockroach.roachpb.Internal/Batch",
+													"tagGroups": [
+														{
+															"tags": [
+																{
+																	"key": "_verbose",
+																	"value": "1"
+																},
+																{
+																	"key": "node",
+																	"value": "3"
+																},
+																{
+																	"key": "span.kind",
+																	"value": "server"
+																},
+																{
+																	"key": "request",
+																	"value": "Get [/Table/114/1/\"box-0c5921f8\"/0], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]"
+																}
+															]
+														}
+													],
+													"startTime": "2025-08-15T15:25:26.444088645Z",
+													"duration": "0.001020313s",
+													"logs": [
+														{
+															"time": "2025-08-15T15:25:26.444101421Z",
+															"message": "server/node.go:1612 [n3] node received request: ‹1 Get›"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444162631Z",
+															"message": "kv/kvserver/store_send.go:149 [n3,s3] executing Get [/Table/114/1/‹\"box-0c5921f8\"›/‹0›], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444185220Z",
+															"message": "kv/kvserver/replica_send.go:171 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] read-only path"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444207447Z",
+															"message": "kv/kvserver/concurrency/concurrency_manager.go:259 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] sequencing request"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444224325Z",
+															"message": "kv/kvserver/concurrency/concurrency_manager.go:340 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] acquiring latches"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444241498Z",
+															"message": "kv/kvserver/concurrency/concurrency_manager.go:384 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] scanning lock table for conflicting locks"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444272062Z",
+															"message": "kv/kvserver/replica_follower_read.go:134 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] serving via follower read; query timestamp below closed timestamp by 36.370589ms"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444293461Z"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444336735Z",
+															"message": "kv/kvserver/replica_read.go:308 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] can drop latches early for batch (Get [/Table/114/1/‹\"box-0c5921f8\"›/‹0›], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]); scanning lock table first to detect conflicts"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444593013Z",
+															"message": "storage/engine.go:2095 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] lock table scan stats: ‹seeked 1 times (1 internal); stepped 0 times (0 internal); blocks: 0B cached, 56KB not cached (read time: 30.121µs); points: 0 (0B keys, 0B values)›"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444616152Z",
+															"message": "kv/kvserver/replica_read.go:120 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] lock table scan complete without conflicts; dropping latches early"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444632431Z",
+															"message": "kv/kvserver/replica_read.go:421 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] executing read-only batch"
+														},
+														{
+															"time": "2025-08-15T15:25:26.444999593Z",
+															"message": "kv/kvserver/replica_evaluate.go:563 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] evaluated Get command ‹header:\u003ckvnemesis_seq:\u003c\u003e key:\"\\366r\\211\\022box-0c5921f8\\000\\001\\210\" \u003e ›, txn=\"sql txn\" meta={id=8aad20cf key=/Min iso=Serializable pri=0.00022221 epo=0 ts=1755271522.241097000,0 min=1755271522.241097000,0 seq=0} lock=false stat=PENDING rts=1755271522.241097000,0 wto=false gul=1755271522.241097000,0 obs={n3@1755271526.440001395,0} : resp=‹header:\u003cnum_keys:1 num_bytes:155 \u003e value:\u003craw_bytes:\")\\346Oh\\n\u0026\\021hwallace@king.com\\026\\reu-central-1a\\033\\037\\017h@\\000\\000\\001\\220\\000\\000\\005\\320\\000\\000\\\\rules\\200\\000\\000\\001\\320\\000\\000O@\\000\\000\\003\\220\\000\\000\\006\\020\\000\\000\\023\\020\\000\\000\\00...›, err=\u003cnil\u003e"
+														},
+														{
+															"time": "2025-08-15T15:25:26.445039781Z",
+															"message": "n3 scan stats: stepped 0 times (0 internal); seeked 1 times (1 internal); block-bytes: (total 23 KiB, cached 0 B, duration 11.232µs); points: (count 1, key-bytes 29 B, value-bytes 164 B, tombstoned: 0) ranges: (count 0), (contained-points 0, skipped-points 0) evaluated requests: 1 gets, 0 scans, 0 reverse scans"
+														},
+														{
+															"time": "2025-08-15T15:25:26.445067966Z",
+															"message": "kv/kvserver/replica_read.go:233 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] read completed"
+														},
+														{
+															"time": "2025-08-15T15:25:26.445108261Z",
+															"message": "server/node.go:1706 [n3] node sending response"
+														}
+													],
+													"structuredRecords": [
+														{
+															"time": "2025-08-15T15:25:26.444276903Z",
+															"payload": {
+																"@type": "type.googleapis.com/cockroach.roachpb.UsedFollowerRead"
+															}
+														},
+														{
+															"time": "2025-08-15T15:25:26.445010423Z",
+															"payload": {
+																"@type": "type.googleapis.com/cockroach.roachpb.ScanStats",
+																"numInterfaceSeeks": "1",
+																"numInternalSeeks": "1",
+																"blockBytes": "23305",
+																"keyBytes": "29",
+																"valueBytes": "164",
+																"pointCount": "1",
+																"blockReadDuration": "0.000011232s",
+																"numGets": "1",
+																"nodeId": 3,
+																"region": "us-east-2"
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1051 @@
+{
+	"_comment": "This is a trace for SQL statement: SELECT * FROM buckets WHERE bucket_name = 'box-0c5921f8'\nThis trace can be imported into Jaeger for visualization. From the Jaeger Search screen, select the JSON File.\nJaeger can be started using docker with: docker run -d --name jaeger -p 16686:16686 jaegertracing/all-in-one:1.17\nThe UI can then be accessed at http://localhost:16686/search",
+	"data": [
+		{
+			"traceID": "1601673448789216523",
+			"spans": [
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "8240971278386227633",
+					"operationName": "traced statement",
+					"references": null,
+					"startTime": 1755271526442589,
+					"duration": 2906,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_unfinished",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						},
+						{
+							"key": "statement",
+							"type": "STRING",
+							"value": "SELECT * FROM buckets WHERE bucket_name = 'box-0c5921f8'"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526443384,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] planning ends"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443407,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] checking distributability"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443424,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] will distribute plan: false"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443444,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] executing after 0 retries, last retry reason: \u003cnil\u003e"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443459,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] execution starts: distributed engine"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443479,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/distsql_running.go:2083 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] creating DistSQL plan with isLocal=true"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443507,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/distsql_running.go:760 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] noMutations = true"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443524,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/distsql_running.go:806 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] containsLocking = false"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443539,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/distsql_running.go:895 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹running DistSQL plan›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445424,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] execution ends"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445439,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/conn_executor_exec.go:1087 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] rows affected: 1"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "6690217431805493866",
+					"operationName": "optimizer",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "8240971278386227633"
+						}
+					],
+					"startTime": 1755271526442599,
+					"duration": 728,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526442665,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/plan_opt.go:431 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹query cache miss›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442685,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/opt/optbuilder/builder.go:239 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optbuilder start"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442735,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 112(‹\"pua_demo\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=1:0,0, refcount=1"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442766,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442790,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442805,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442818,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [112]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442831,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [113]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442851,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 113(‹\"public\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=1:0,0, refcount=1"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442874,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 114(‹\"buckets\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=9:0,0, refcount=1"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442889,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [114]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442916,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/descs/descriptor.go:132 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] looking up descriptors for ids [23]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526442937,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/catalog/lease/descriptor_version_state.go:128 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] descriptorVersionState.incRefCount: 23(‹\"role_members\"›,010180e1a6507b94834e6eac23f20d22f476fa) ver=4:0,0, refcount=1"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443168,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/opt/optbuilder/builder.go:285 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optbuilder finish"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443186,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/opt/xform/optimizer.go:237 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optimize start"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443266,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/opt/xform/optimizer.go:286 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] optimize finish"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443277,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/plan_opt.go:431 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹query cache add›"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "2876650405414135922",
+					"operationName": "flow",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "8240971278386227633"
+						}
+					],
+					"startTime": 1755271526443545,
+					"duration": 1837,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526443569,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/colflow/vectorized_flow.go:227 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹setting up vectorized flow›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443609,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/colflow/vectorized_flow.go:268 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] vectorized flow setup succeeded"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443733,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/flowinfra/flow.go:460 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] starting (0 processors, 0 startables) asynchronously"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443750,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/colflow/vectorized_flow.go:315 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] ‹running the batch flow coordinator in the flow's goroutine›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445379,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "ComponentStats{ID: {82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 FLOW 0 3 ‹us-east-2›}}"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "954428827681583362",
+					"operationName": "batch flow coordinator",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "2876650405414135922"
+						}
+					],
+					"startTime": 1755271526443751,
+					"duration": 1596,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						},
+						{
+							"key": "cockroach.flowid",
+							"type": "STRING",
+							"value": "82c42d17-bf24-4e98-a3ea-ddc2342d6ca7"
+						},
+						{
+							"key": "cockroach.processorid",
+							"type": "STRING",
+							"value": "0"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526445341,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "ComponentStats{ID: {82c42d17-bf24-4e98-a3ea-ddc2342d6ca7 PROCESSOR 0 3 }, used follower read, KV nodes: n3, KV regions: ‹us-east-2›, KV time: 2ms, KV rows decoded: 1, KV bytes read: ‹174 B›, KV gRPC calls: 1, KV pairs read: 1, MVCC step count (ext/int): ‹0/0›, MVCC seek count (ext/int): ‹1/1›, max memory allocated: ‹20 KiB›, sql cpu time: 31µs, batches output: 1, rows output: 1}"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "7656516151831514509",
+					"operationName": "colbatchscan",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "954428827681583362"
+						}
+					],
+					"startTime": 1755271526443756,
+					"duration": 1596,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_unfinished",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						},
+						{
+							"key": "cockroach.flowid",
+							"type": "STRING",
+							"value": "82c42d17-bf24-4e98-a3ea-ddc2342d6ca7"
+						},
+						{
+							"key": "cockroach.processorid",
+							"type": "STRING",
+							"value": "0"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526443801,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/row/kv_batch_fetcher.go:598 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] Scan ‹/Table/114/1/\"box-0c5921f8\"/0›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443815,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "sql/row/kv_batch_fetcher.go:284 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›] kv fetcher: sending a batch with 1 requests"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "1547308349290427973",
+					"operationName": "txn coordinator send",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "7656516151831514509"
+						}
+					],
+					"startTime": 1755271526443819,
+					"duration": 1407,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						},
+						{
+							"key": "txnID",
+							"type": "STRING",
+							"value": "8aad20cf-58e5-48d0-8587-a197e0684592"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526445222,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/txn_interceptor_span_refresher.go:656 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] recording span to refresh: ‹/Table/114/1/\"box-0c5921f8\"/0›"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "4259570662357451042",
+					"operationName": "dist sender send",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "1547308349290427973"
+						}
+					],
+					"startTime": 1755271526443834,
+					"duration": 1340,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "client",
+							"type": "STRING",
+							"value": "192.168.3.113:52622"
+						},
+						{
+							"key": "hostssl",
+							"type": "STRING",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"type": "STRING",
+							"value": "ron"
+						},
+						{
+							"key": "txn",
+							"type": "STRING",
+							"value": "8aad20cf"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526443869,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/range_iter.go:183 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] querying next range at /Table/114/1/‹\"box-0c5921f8\"›/‹0›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443941,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/range_iter.go:220 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] key: /Table/114/1/‹\"box-0c5921f8\"›/‹0›, desc: r76:‹/Table/114{-/1/\"g\"}› [(n1,s1):1, (n3,s3):2, (n2,s2):3, next=4, gen=12]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526443995,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/dist_sender.go:2602 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] routing to nearest replica; leaseholder not required order=‹[›(n3,s3):2(health=false match=2 latency=0µs)‹,›(n1,s1):1(health=false match=1 latency=814µs)‹,›(n2,s2):3(health=false match=1 latency=1ms)‹]›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444032,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/dist_sender.go:2661 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] r76: sending batch ‹1 Get› to (n3,s3):2"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444055,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "rpc/nodedialer/nodedialer.go:141 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] ‹sending request to local client›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444076,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/transport.go:208 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] ‹sending batch request›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445171,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvclient/kvcoord/transport.go:210 [n3,client=192.168.3.113:52622,hostssl,user=‹ron›,txn=‹8aad20cf›] ‹received batch response›"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				},
+				{
+					"traceID": "1601673448789216523",
+					"spanID": "6215303476755166285",
+					"operationName": "/cockroach.roachpb.Internal/Batch",
+					"references": [
+						{
+							"refType": "CHILD_OF",
+							"traceID": "1601673448789216523",
+							"spanID": "4259570662357451042"
+						}
+					],
+					"startTime": 1755271526444088,
+					"duration": 1020,
+					"tags": [
+						{
+							"key": "goroutine",
+							"type": "int64",
+							"value": 1493536
+						},
+						{
+							"key": "_verbose",
+							"type": "STRING",
+							"value": "1"
+						},
+						{
+							"key": "node",
+							"type": "STRING",
+							"value": "3"
+						},
+						{
+							"key": "span.kind",
+							"type": "STRING",
+							"value": "server"
+						},
+						{
+							"key": "request",
+							"type": "STRING",
+							"value": "Get [/Table/114/1/\"box-0c5921f8\"/0], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]"
+						}
+					],
+					"logs": [
+						{
+							"timestamp": 1755271526444101,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "server/node.go:1612 [n3] node received request: ‹1 Get›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444162,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/store_send.go:149 [n3,s3] executing Get [/Table/114/1/‹\"box-0c5921f8\"›/‹0›], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444185,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_send.go:171 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] read-only path"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444207,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/concurrency/concurrency_manager.go:259 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] sequencing request"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444224,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/concurrency/concurrency_manager.go:340 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] acquiring latches"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444241,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/concurrency/concurrency_manager.go:384 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] scanning lock table for conflicting locks"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444272,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_follower_read.go:134 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] serving via follower read; query timestamp below closed timestamp by 36.370589ms"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444293,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": ""
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444336,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_read.go:308 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] can drop latches early for batch (Get [/Table/114/1/‹\"box-0c5921f8\"›/‹0›], [txn: 8aad20cf], [max_span_request_keys: 0], [target_bytes: 10485760]); scanning lock table first to detect conflicts"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444593,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "storage/engine.go:2095 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] lock table scan stats: ‹seeked 1 times (1 internal); stepped 0 times (0 internal); blocks: 0B cached, 56KB not cached (read time: 30.121µs); points: 0 (0B keys, 0B values)›"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444616,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_read.go:120 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] lock table scan complete without conflicts; dropping latches early"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444632,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_read.go:421 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] executing read-only batch"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526444999,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_evaluate.go:563 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] evaluated Get command ‹header:\u003ckvnemesis_seq:\u003c\u003e key:\"\\366r\\211\\022box-0c5921f8\\000\\001\\210\" \u003e ›, txn=\"sql txn\" meta={id=8aad20cf key=/Min iso=Serializable pri=0.00022221 epo=0 ts=1755271522.241097000,0 min=1755271522.241097000,0 seq=0} lock=false stat=PENDING rts=1755271522.241097000,0 wto=false gul=1755271522.241097000,0 obs={n3@1755271526.440001395,0} : resp=‹header:\u003cnum_keys:1 num_bytes:155 \u003e value:\u003craw_bytes:\")\\346Oh\\n\u0026\\021hwallace@king.com\\026\\reu-central-1a\\033\\037\\017h@\\000\\000\\001\\220\\000\\000\\005\\320\\000\\000\\\\rules\\200\\000\\000\\001\\320\\000\\000O@\\000\\000\\003\\220\\000\\000\\006\\020\\000\\000\\023\\020\\000\\000\\00...›, err=\u003cnil\u003e"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445039,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "n3 scan stats: stepped 0 times (0 internal); seeked 1 times (1 internal); block-bytes: (total 23 KiB, cached 0 B, duration 11.232µs); points: (count 1, key-bytes 29 B, value-bytes 164 B, tombstoned: 0) ranges: (count 0), (contained-points 0, skipped-points 0) evaluated requests: 1 gets, 0 scans, 0 reverse scans"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445067,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "kv/kvserver/replica_read.go:233 [n3,s3,r76/2:/Table/114{-/1/‹\"g\"›}] read completed"
+								}
+							]
+						},
+						{
+							"timestamp": 1755271526445108,
+							"fields": [
+								{
+									"key": "event",
+									"type": "STRING",
+									"value": "server/node.go:1706 [n3] node sending response"
+								}
+							]
+						}
+					],
+					"processID": "node 3",
+					"warnings": null
+				}
+			],
+			"processes": {
+				"node 3": {
+					"serviceName": "node 3",
+					"tags": null
+				}
+			},
+			"warnings": null
+		}
+	]
+}

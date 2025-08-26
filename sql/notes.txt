@@ -1,0 +1,5 @@
+
+Connect to the ec2 instance (do I need to source the .bashrc?)
+run the install demo.
+
+passwordless ssh

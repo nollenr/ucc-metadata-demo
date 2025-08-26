@@ -1,0 +1,31 @@
+planning time: 773µs
+execution time: 2ms
+distribution: local
+vectorized: true
+plan type: custom
+rows decoded from KV: 1 (182 B, 1 gRPC calls)
+cumulative time spent in KV: 1ms
+maximum memory usage: 20 KiB
+DistSQL network usage: 0 B (0 messages)
+regions: us-east-2
+sql cpu time: 31µs
+client time: 20µs
+isolation level: serializable
+priority: normal
+quality of service: regular
+historical: AS OF SYSTEM TIME 2025-08-15 15:07:26.170823
+
+• scan
+  sql nodes: n2
+  kv nodes: n2
+  regions: us-east-2
+  actual row count: 1
+  KV time: 1ms
+  KV rows decoded: 1
+  KV bytes read: 182 B
+  KV gRPC calls: 1
+  estimated max memory allocated: 20 KiB
+  sql cpu time: 31µs
+  estimated row count: 1 (0.01% of the table; stats collected 16 hours ago)
+  table: buckets@buckets_pkey
+  spans: [/'reveal-dd973d1a' - /'reveal-dd973d1a']

@@ -1,0 +1,1 @@
+SELECT * FROM buckets WHERE bucket_name = 'reveal-dd973d1a'
