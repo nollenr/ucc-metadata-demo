@@ -15,6 +15,7 @@ chmod +x database_setup.sh
 chmod +x dbnode_setup.sh
 ./dbnode_setup.sh
 ./database_setup.sh
+SETCRDBVARS
 ```
 
 ## On the app server
@@ -27,10 +28,15 @@ python3.11 demo.py
 # Demo
 ## Patch the database to 25.2
 ```
-cd crdb-ucc-metadata-demo/
+cd ucc-metadata-demo/
 python3.11 demo.py
 ```
-Bring up the database UI
+### Bring up the database UI
+On the database server run the following.  Find the public address for that private IP.  Use that as the address for the UI.
+```
+echo $CRDBNODE1
+```
+- TAKE A NOTE OF THE TIME SO WE CAN SCROLL INTO INTO THAT SECTION on METRICS!!
 - TTL Job 
 - the database UI shows one of the nodes is not patched! -- note the message at the top of the overview screen
 - be sure we can see all 3 app nodes and the database terminal
@@ -50,3 +56,7 @@ ALTER TABLE buckets ADD COLUMN owner_secondary STRING NOT NULL DEFAULT 'Unknown'
 ```
 - Be sure the 4 terminals are available to view!
 - Once the "alter table" is submitted, look at the Database UI
+
+
+## On the Database UI
+GO to Metrics / SQL Dashboard, and scroll down to "SQL Statements 99th Percentile and 90th Percentile".    Drag in to the time in question!

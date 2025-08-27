@@ -1,7 +1,7 @@
 my_ip_address = "98.148.51.154"
 aws_region_01 = "us-east-2"
 owner = "nollen"
-project_name = "my-project"
+project_name = "ucc-demo"
 crdb_instance_key_name = "nollen-cockroach-revenue-us-east-2-kp01"
 vpc_cidr = "192.168.7.0/24"
 
@@ -9,7 +9,7 @@ vpc_cidr = "192.168.7.0/24"
 # CRDB Specifications
 # -----------------------------------------
 crdb_nodes = 3
-crdb_instance_type = "t4g.medium"
+crdb_instance_type = "m6g.xlarge"
 crdb_store_volume_type = "gp3"
 crdb_store_volume_size = 8
 # iops and throughput are only used for gp3 volumes
@@ -36,11 +36,11 @@ install_enterprise_keys = "yes"
 
 # HA Proxy
 include_ha_proxy = "yes"
-haproxy_instance_type = "t3a.micro"
+haproxy_instance_type = "m6i.large"
 
 # APP Node
 include_app = "yes"
-app_instance_type = "t3a.micro"
+app_instance_type = "m6i.large"
 
 create_admin_user = "yes"
 admin_user_name = "ron"
